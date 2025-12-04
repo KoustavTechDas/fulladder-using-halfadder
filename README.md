@@ -1,64 +1,93 @@
-Full Adder Using Hierarchical Modeling (Built from Two Half Adders)
-🧩 Introduction
-A Full Adder is a fundamental combinational logic circuit that performs the addition of three 1-bit inputs: A, B, and Cin (carry-in). It produces two outputs: Sum and Cout (carry-out).
-In this project, the full adder is designed using a hierarchical modeling approach, where two half adders are connected along with an OR gate to construct the complete full-adder functionality. This demonstrates how smaller, reusable modules can be composed to build more complex digital systems.
+# FullAdder
 
-🏗️ Project Structure
-fulladder-using-halfadder/
-│
-├── src/rtl/                # Verilog RTL design files (half adder + full adder)
-│
-├── sim/testbench/          # Testbench files to verify the design
-│
-├── sim/result/image/       # Simulation results (waveforms + schematic diagrams)
-│
-└── theory/                 # Circuit truth table, K-map, Boolean equations
+A basic Verilog HDL implementation of a full adder digital circuit.
 
-🔧 Design Approach
-✔ Hierarchical Model
-The full adder is built by instantiating two half adder modules:
-Half Adder 1 → adds A and B
-Half Adder 2 → adds the Sum from HA1 with Cin
-An OR gate combines the carry outputs of both half adders → produces Cout
-This modular design improves readability, reusability, and testing simplicity.
+## Table of Contents
+- [Introduction](#introduction)
+- [Project Structure](#project-structure)
+- [Design and Implementation](#design-and-implementation)
+- [Simulation](#simulation)
+- [Files Overview](#files-overview)
+- [How to Use](#how-to-use)
+- [Dependencies](#dependencies)
+- [License](#license)
 
-📁 Included Files
-1. RTL Design (src/rtl/)
-Contains:
-half_adder.v
-full_adder.v
-These files implement the combinational logic in Verilog HDL.
+## Introduction
 
-2. Testbench (sim/testbench/)
-Contains Verilog testbench to verify all input combinations and validate the Sum and Carry outputs.
+This project demonstrates the design and simulation of a full adder using Verilog. The full adder is a fundamental combinational logic circuit that takes three input bits and produces a sum and carry output.
 
-3. Simulation Results (sim/result/image/)
-Includes:
-Schematic diagrams of the full adder
-Waveform outputs generated after simulation
-Full Adder Schematic:
-![Full Adder Schematic](sim/result/image/FAschematic.png)
-![Full Adder with Half Adder Schematic](sim/result/image/FAwithHAschematic.png)
-![Half Adder Schematic](sim/result/image/HAschematic.png)
-Simulation Waveform:
-![Simulation Waveform](sim/result/image/FAwaveform.png)
+## Project Structure
 
-5. Theory (theory/)
-Contains the conceptual documentation including:
-Truth Table
-K-Map simplification
-Boolean equations
-Circuit diagram designed in Digital Logic Simulator
+The project is organized as follows:
 
-Theory Image:
-![Theory](theory/FA using HA.jpg)
+- `src/rtl/`: Contains the Verilog code for the basic gates.
+    
+- `sim/`: Contains all simulation-related files.
+    - `testbench/`: Contains the Verilog testbench code to simulate and verify the halfadder modules.
+    - `result/images/`: Contains the images for the simulation results:
 
-🧪 Verification
-The testbench exhaustively tests all 8 input combinations of A, B, and Cin.
-It verifies:
-Correct Sum generation
-Correct Carry-Out behavior
-Proper hierarchical functioning of cascaded half adders
+## Design and Implementation
 
-📜 Summary
-This project demonstrates how a full adder can be efficiently implemented using two half adders, highlighting the advantages of hierarchical design in digital systems. The repository contains complete RTL code, testbenches, simulation outputs, and theoretical documentation.
+### Verilog Modules
+
+The full adder is implemented in the `src/rtl/fullAdder.v` file. 
+
+
+### Testbenches
+
+The testbenches are written in the `sim/testbench` directory and are responsible for simulating the full adder with all possible input combinations to verify correctness.
+
+### Simulation Results
+
+Simulation results are stored in the `sim/result/images/` directory and include:
+- **Waveform**: The waveform generated during the simulation that shows the signal transitions halfadder output.
+  ![Waveform](sim/result/images/FAwaveform.png)
+- **Schematic**: A general schematic representation of the gate-level design.
+  ![Schematic](sim/result/images/FAschematic.png)
+- **Schematic**: A more detailed schematic.
+  ![Gate-level Schematic](sim/result/images/FAwithHAschematic.png)
+- **Schematic**: Half adder schematic.
+  ![Gate-level Schematic](sim/result/images/HAschematic.png)
+  
+
+## Files Overview
+
+Here’s a brief overview of the files in the repository:
+
+### `src/rtl/`
+- **`fullAdder.v`**: Verilog module that contains the implementation of fulladder.
+
+### `sim/`
+- **`testbench/`**: Contains the testbench files for simulating the fulladder. For example:
+    - **`fullAdder_tb.v`**: Testbench to simulate the gates in `fullAdder.v`.
+    
+- **`result/images/`**: Contains the images of the simulation results:
+    - **`waveform.png`**: A screenshot of the waveform of the simulation.
+    - **`schematic.png`**: The schematic diagram of the design.
+    - **`gatelevelschematic.png`**: The gate-level schematic of the design.
+### `theory`
+- **`fullAdder.jpg`**: Is a image where the truth table Kmap boolean equationan and the circuit is shown for reference.
+
+## How to Use
+
+### Requirements
+
+To run the simulation, you will need **QuestaSim** (or **ModelSim**, which is the same simulator suite):
+- [QuestaSim](https://www.mentor.com/products/fpga/questasim) or [ModelSim](https://www.mentor.com/products/fpga/modelsim)
+
+
+### Viewing the Simulation Results
+
+You can view the simulation waveform and other images in the `sim/result/images/` directory, such as:
+- **`waveform.png`**: View the signal transitions for each gate's output.
+- **`schematic.png`**: View the schematic diagram of the gate-level design.
+- **`gatelevelschematic.png`**: View the gate-level schematic representation of the design.
+
+## Dependencies
+
+- **QuestaSim** or **ModelSim** (for simulation)
+- Text editor for Verilog code (Visual Studio Code, Sublime Text, etc.)
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
