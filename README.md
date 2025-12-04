@@ -67,6 +67,8 @@ Here’s a brief overview of the files in the repository:
     - **`gatelevelschematic.png`**: The gate-level schematic of the design.
 ### `theory`
 - **`fullAdder.jpg`**: Is a image where the truth table Kmap boolean equationan and the circuit is shown for reference.
+- **Theory**:
+  ![Theory](theory/FA using HA.jpg)
 
 ## How to Use
 
