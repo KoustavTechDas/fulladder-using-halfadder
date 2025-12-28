@@ -8,7 +8,6 @@ assign carry = a & b;
 endmodule
 
 
-
 module fullAdder(
   input A,B,Cin,
   output Sum,Cout
