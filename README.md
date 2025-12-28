@@ -48,7 +48,6 @@ Simulation results are stored in the `sim/result/images/` directory and include:
 - **Schematic**: Half adder schematic.
   ![Gate-level Schematic](sim/result/images/HAschematic.png)
   
-
 ## Files Overview
 
 Here’s a brief overview of the files in the repository:
