@@ -20,4 +20,3 @@ halfAdder HA2(.a(s1), .b(Cin), .sum(Sum), .carry(c2));
 
 assign Cout = c1 | c2;
 endmodule
-
