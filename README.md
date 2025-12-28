@@ -32,7 +32,6 @@ The project is organized as follows:
 
 The full adder is implemented in the `src/rtl/fullAdder.v` file. 
 
-
 ### Testbenches
 
 The testbenches are written in the `sim/testbench` directory and are responsible for simulating the full adder with all possible input combinations to verify correctness.
